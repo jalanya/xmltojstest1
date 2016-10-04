@@ -40,15 +40,22 @@ var returnJSONResults = function(baseName, queryName) {
           console.log('Saving response.BackgroundReport in HTML file');
 
           fs.writeFile("scenario-lucas-bunny-denied.html", response.BackgroundReport, function(err) {
-              if(err) {
-                  return console.log(err);
-              }
-
-              console.log("The file was saved!");
+            if(err) {
+                return console.log(err);
+            }
+            console.log("The file was saved!");
           });
 
-      });
+          console.log('Saving in JSON file');
 
+          fs.writeFile("scenario-lucas-bunny-denied.json", json, function(err) {
+            if(err) {
+               return console.log(err);
+            }
+            console.log("The JSON file was saved!");
+          });
+          
+      });
       console.log("File '" + filePath + "/ was successfully read.\n");
       return json;
     } catch (ex) {
