@@ -46,6 +46,8 @@ var returnJSONResults = function(baseName, queryName) {
             console.log("The file was saved!");
           });
 
+          console.log('Saving response.BackgroundReport 2 in HTML file', result.ApplicantScreening.Response[0].BackgroundReport);
+
           console.log('Saving in JSON file');
 
           fs.writeFile("scenario-lucas-bunny-denied.json", json, function(err) {
@@ -54,7 +56,7 @@ var returnJSONResults = function(baseName, queryName) {
             }
             console.log("The JSON file was saved!");
           });
-          
+
       });
       console.log("File '" + filePath + "/ was successfully read.\n");
       return json;
